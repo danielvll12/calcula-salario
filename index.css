@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Animación de desplazamiento lateral (scroll infinito) */
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.aviso-parpadeo {
+  @apply text-red-600 font-bold text-xl mt-2;
+  animation: parpadeo 3s infinite;
+}
+
+/* Tipografía base y fondo */
+body {
+  @apply bg-gradient-to-br from-gray-100 to-white text-gray-800 font-sans min-h-screen flex flex-col justify-between;
+}
+
+/* Tarjeta principal */
+.card {
+  @apply max-w-3xl mx-auto my-10 p-8 bg-white rounded-3xl shadow-2xl border border-gray-200 transition-transform transform hover:scale-[1.01];
+}
+
+/* Títulos */
+h1 {
+  @apply text-4xl font-extrabold text-center mb-6 text-indigo-600;
+}
+
+h2 {
+  @apply text-2xl font-semibold mt-8 mb-4 text-gray-700;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-500 transition duration-200;
+}
+
+/* Etiquetas */
+label {
+  @apply block text-sm font-medium text-gray-600 mb-1;
+}
+
+/* Botón */
+button {
+  @apply w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg transition duration-300;
+}
+
+/* Resultados */
+.resultado {
+  @apply mt-6 p-5 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg text-gray-700 shadow-sm;
+}
+
+/* Footer centrado */
+footer {
+  @apply bg-gray-900 text-white text-center py-5 mt-10;
+}
+
+footer p {
+  @apply text-sm font-medium;
+}
+
+/* Animaciones suaves */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
